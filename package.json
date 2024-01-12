@@ -1,0 +1,26 @@
+{
+  "name": "full-stack-backend",
+  "version": "1.0.0",
+  "description": "hoi dan it fullstack backend zero",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Frezill/backend-hoidanit.git"
+  },
+  "keywords": [
+    "nodejs"
+  ],
+  "author": "frezill",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Frezill/backend-hoidanit/issues"
+  },
+  "homepage": "https://github.com/Frezill/backend-hoidanit#readme",
+  "dependencies": {
+    "express": "4.18.2"
+  }
+}
