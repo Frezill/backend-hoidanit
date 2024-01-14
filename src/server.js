@@ -1,7 +1,12 @@
-const express = require('express') //declare express library
+const express = require('express'); //declare express library
 const path = require('path');
-const app = express() //express application
-const port = 8080
+require('dotenv').config();
+
+const app = express(); //express application
+const port = process.env.PORT || 8888;
+const hostname = process.env.HOST_NAME;
+
+console.log(process.env);
 
 //config template engine
 app.set('views', path.join(__dirname, 'views'))
