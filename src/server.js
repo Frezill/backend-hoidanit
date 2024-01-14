@@ -1,12 +1,12 @@
-const express = require('express')
+const express = require('express') //declare express library
 const path = require('path');
-// import express from 'express'
-const app = express()
+const app = express() //express application
 const port = 8080
 
 //config template engine
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
+//
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
