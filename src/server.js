@@ -6,15 +6,16 @@ const app = express(); //express application
 const port = process.env.PORT || 8888;
 const hostname = process.env.HOST_NAME;
 
-console.log(process.env);
-
 //config template engine
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
-//
 
+// config static file
+app.use(express.static(path.join(__dirname, 'public')))
+
+//declare route
 app.get('/', (req, res) => {
-  res.send('Hello World!')
+  res.send('Hello World with Phat!')
 })
 
 app.get('/abc', (req, res) => {
