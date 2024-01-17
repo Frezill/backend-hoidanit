@@ -1,3 +1,5 @@
+//belong to router folder
+
 const express = require('express');
 const {getHomepage,
         getABC,

@@ -1,6 +1,6 @@
-require('dotenv').config();
+require('dotenv').config(); //config dotenv
 const express = require('express'); //declare express library
-const path = require('path');
+const path = require('path');//static file
 const configViewEngine = require('./config/viewEngine');
 const webRoutes = require('./routes/web');
 
