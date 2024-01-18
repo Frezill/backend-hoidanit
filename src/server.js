@@ -12,7 +12,7 @@ const hostname = process.env.HOST_NAME;
 connection.query(
   'select * from Users u',
   function (err, results, fields) {
-    console.log(">>>>result: ", results); // results contains rows returned by server
+    // console.log(">>>>result: ", results); // results contains rows returned by server
   }
 );
 
