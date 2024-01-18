@@ -16,6 +16,10 @@ connection.query(
   }
 );
 
+//config req.body
+app.use(express.json()) // for json
+app.use(express.urlencoded({ extended: true })) // for form data
+
 //config template engine
 configViewEngine(app);
 
