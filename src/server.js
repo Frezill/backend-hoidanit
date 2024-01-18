@@ -9,12 +9,12 @@ const app = express(); //express application
 const port = process.env.PORT || 8888;
 const hostname = process.env.HOST_NAME;
 
-connection.query(
-  'select * from Users u',
-  function (err, results, fields) {
-    // console.log(">>>>result: ", results); // results contains rows returned by server
-  }
-);
+// connection.query(
+//   'select * from Users u',
+//   function (err, results, fields) {
+//     // console.log(">>>>result: ", results); // results contains rows returned by server
+//   }
+// );
 
 //config req.body
 app.use(express.json()) // for json
