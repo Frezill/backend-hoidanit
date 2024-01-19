@@ -1,5 +1,7 @@
 const connection = require("../config/database");
 
+
+
 const getAllUsers = async (req, res) => {
     let [results, fields] = await connection.query('select * from Users');
     return results;
@@ -20,8 +22,15 @@ const updateUserById = async (email, name, city, userId) => {
     );
 }
 
+const deleteUserById = async (userId) => {
+    let [results, fields] = await connection.query(
+        `DELETE FROM Users WHERE id = ?`, [userId]
+    );
+}
+
 module.exports = {
     getAllUsers,
     getUserById,
     updateUserById,
+    deleteUserById,
 }
