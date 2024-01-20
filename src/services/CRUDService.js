@@ -1,6 +1,10 @@
 const connection = require("../config/database");
 
-
+const createUser = async (email, name, city) => {
+    let [results, fields] = await connection.query(
+        `INSERT INTO Users (email, name, city) VALUES(?, ?, ?)`, [email, name, city]
+    );
+}
 
 const getAllUsers = async (req, res) => {
     let [results, fields] = await connection.query('select * from Users');
@@ -31,6 +35,7 @@ const deleteUserById = async (userId) => {
 module.exports = {
     getAllUsers,
     getUserById,
+    createUser,
     updateUserById,
     deleteUserById,
 }
