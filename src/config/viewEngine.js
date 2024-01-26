@@ -9,5 +9,5 @@ const configViewEngine = (app) => {
     app.use(express.static(path.join('./src', 'public')));
 }
 let x = path.join('./src', 'views');
-console.log(x);
+// console.log(">>>> path", x);
 module.exports = configViewEngine;
