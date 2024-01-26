@@ -1,8 +1,10 @@
 const connection = require('../config/database')
 const { getAllUsers, getUserById, updateUserById, deleteUserById, createUser, } = require('../services/CRUDService')
+const User = require('../models/user')
+
 
 const getHomepage = async (req, res) => {
-    let results = await getAllUsers();
+    let results = [];
     return res.render('home.ejs', { listUsers: results })
 }
 
@@ -19,9 +21,15 @@ const postCreateUser = async (req, res) => {
     let name = req.body.name;
     let city = req.body.city;
     // let {email, name, city} = req.body;
-    await createUser(email, name, city);
-    res.redirect('/')
-    // res.send('create user succeed !');
+    // await createUser(email, name, city);
+    await User.create({
+        email: email,
+        name: name,
+        city: city,
+    })
+
+    // res.redirect('/')
+    res.send('create user succeed !');
     // console.log('>>>results:', results)
 }
 
