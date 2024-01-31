@@ -3,6 +3,7 @@ const express = require('express'); //declare express library
 const path = require('path');//static file
 const configViewEngine = require('./config/viewEngine');
 const webRoutes = require('./routes/web');
+const apiRoutes = require('./routes/api');
 const connection = require('./config/database');
 const mongoose = require('mongoose');
 
@@ -19,7 +20,7 @@ configViewEngine(app);
 
 //delare route
 app.use('/', webRoutes);
-
+app.use('/v1/api', apiRoutes);
 //self running function
 (async () => {
   //test connection
