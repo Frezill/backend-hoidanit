@@ -1,12 +1,20 @@
 const mongoose = require('mongoose');
 
-const userSchema = new mongoose.Schema({
-    name: String,
+const customerSchema = new mongoose.Schema({
+    name: {
+        type: String,
+        require: true,
+    },
+    address: String,
+    phone: String,
     email: String,
-    city: String,
-    size: String,
-});
-//create table
-const User = mongoose.model('user', userSchema);
+    image: String,
+    description: String,
+},
+    { timestamps: true }
+);
 
-module.exports = User;
+//create table
+const Customer = mongoose.model('Customer', customerSchema);
+
+module.exports = Customer;
