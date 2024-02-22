@@ -12,9 +12,18 @@ const customerSchema = new mongoose.Schema({
     image: String,
     description: String,
 },
-    { timestamps: true }
+    { 
+        timestamps: true,  //createAt, updateAt
+    //     statics: {
+    //     findByHoiDanIt(name) {
+    //       return this.find({ name: new RegExp(name, 'i') });
+    //     }
+    //   } 
+    }
 );
 
+
+//Override all methods
 customerSchema.plugin(mongoose_delete,  { overrideMethods: 'all' });
 
 //create table

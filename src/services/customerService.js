@@ -57,9 +57,14 @@ module.exports = {
             console.log("error >>>>>>>>>", error);
             return null;
         }
+    },
+    deleteArrayCustomerService : async (customerId) => {
+       try {
+            let result = await Customer.delete({_id: { $in: customerId}});
+            return result;
+       } catch (error) {
+        console.log("error >>>>>>>>>", error);
+        return null;
+       }
     }
-
-    
-
-
 }
