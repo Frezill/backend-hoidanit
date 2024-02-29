@@ -4,7 +4,7 @@ const routerAPI = express.Router();
 
 const { getUsersAPI, postCreateUsersAPI, putUpdateUsersAPI, deleteUsersAPI, postUploadSingleFileApi, postUploadMultipleFilesAPI } = require('../controllers/apiController')
 const {postCreateCustomer, postCreateArrayCustomer, getAllCustomer,putUpdateCustomer, deleteACustomer, deleteArrayCustomer } = require("../controllers/customerController");
-
+const {postCreateProject, getProject } = require("../controllers/projectController");
 
 //declare route
 
@@ -36,5 +36,8 @@ routerAPI.get('/info/:name/:address', (req, res) => {
         data: req.params,
     })
 });
+
+routerAPI.post('/projects', postCreateProject);
+routerAPI.get('/projects', getProject);
 
 module.exports = routerAPI;

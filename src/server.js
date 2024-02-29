@@ -32,7 +32,7 @@ app.use('/v1/api', apiRoutes);
   //test connection
   try {
     //using mongoose
-    // await connection();
+    await connection();
 
     //using mongodb driver
     // Connection URL
@@ -48,17 +48,17 @@ app.use('/v1/api', apiRoutes);
     // let a = await collection.findOne({name: "Hoi Dan IT"});
     // console.log(">> find: ", a);
 
-    collection.insertOne({
-      "name": "Le Thanh Phat",
-      "phone number": "0395778055",
-      address: {
-        province: "Hau Giang",
-        country: {
-          name: "Viet Nam",
-          code: 65700
-        }
-      }
-    })
+    // collection.insertOne({
+    //   "name": "Le Thanh Phat",
+    //   "phone number": "0395778055",
+    //   address: {
+    //     province: "Hau Giang",
+    //     country: {
+    //       name: "Viet Nam",
+    //       code: 65700
+    //     }
+    //   }
+    // })
 
 
     //////////////////////////////
