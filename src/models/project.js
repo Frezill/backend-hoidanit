@@ -5,7 +5,7 @@ const mongoose_delete = require('mongoose-delete');
 const customerSchema = new mongoose.Schema(
     {
         name: String,
-        phone: String,
+        phone: String, 
         email: String,
     }
 );
@@ -27,7 +27,7 @@ const projectSchema = new mongoose.Schema(
         customerInfor: customerSchema,
         usersInfor: [{ type: mongoose.Schema.Types.ObjectId, ref: 'user' }],
         leader: userSchema,
-        tasks: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Task' }]
+        tasks: [{ type: mongoose.Schema.Types.ObjectId, ref: 'task' }]
     },
     {
         timestamps: true, // createdAt, updatedAt
